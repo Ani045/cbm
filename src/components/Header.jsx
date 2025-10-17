@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
@@ -18,12 +17,7 @@ const Header = () => {
   };
 
   return (
-    <motion.header 
-      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
@@ -86,7 +80,7 @@ const Header = () => {
           </div>
 
           <button 
-            className="md:hidden"
+            className="md:hidden w-11 h-11 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <SafeIcon icon={isMobileMenuOpen ? FiX : FiMenu} className="w-6 h-6 text-[#3E1E76]" />
@@ -95,60 +89,55 @@ const Header = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <motion.div 
-          className="md:hidden bg-white border-t"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-        >
-          <div className="px-4 py-4 space-y-4">
+        <div className="md:hidden bg-white border-t shadow-lg">
+          <div className="px-4 py-6 space-y-6">
             <button 
               onClick={() => scrollToSection('about')} 
-              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium"
+              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium py-2 text-lg"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('services')} 
-              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium"
+              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium py-2 text-lg"
             >
               Services
             </button>
             <button 
               onClick={() => scrollToSection('process')} 
-              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium"
+              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium py-2 text-lg"
             >
               Process
             </button>
             <button 
               onClick={() => scrollToSection('testimonials')} 
-              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium"
+              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium py-2 text-lg"
             >
               Testimonials
             </button>
             <button 
               onClick={() => scrollToSection('faq')} 
-              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium"
+              className="block w-full text-left text-gray-700 hover:text-[#3E1E76] transition-colors font-medium py-2 text-lg"
             >
               FAQ
             </button>
             <a 
               href="tel:214-295-5890" 
-              className="flex items-center text-[#3E1E76] hover:text-[#9A070C] transition-colors font-medium"
+              className="flex items-center text-[#3E1E76] hover:text-[#9A070C] transition-colors font-medium py-2 text-lg"
             >
               <SafeIcon icon={FiPhone} className="w-4 h-4 mr-2" />
               (214) 295-5890
             </a>
             <button 
               onClick={() => scrollToSection('hero')} 
-              className="w-full bg-[#3E1E76] text-white px-6 py-2 rounded-lg hover:bg-[#9A070C] transition-colors font-medium"
+              className="w-full bg-[#3E1E76] text-white px-6 py-3 rounded-lg hover:bg-[#9A070C] transition-colors font-medium text-lg mt-2"
             >
               Free Consultation
             </button>
           </div>
-        </motion.div>
+        </div>
       )}
-    </motion.header>
+    </header>
   );
 };
 

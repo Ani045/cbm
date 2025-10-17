@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
@@ -72,35 +71,24 @@ const TestimonialsSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Trusted by Mental Health Professionals Nationwide
           </h2>
           <p className="text-xl text-purple-200 max-w-3xl mx-auto">
             See what our clients say about their experience with CBM Medical Management
           </p>
-        </motion.div>
+        </div>
 
         <div 
           className="relative max-w-4xl mx-auto"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
-              className="bg-white rounded-3xl shadow-2xl p-8 md:p-12"
-            >
+          <div
+            key={currentIndex}
+            className="bg-white rounded-3xl shadow-2xl p-8 md:p-12"
+          >
               <div className="text-center">
                 {/* Stars */}
                 <div className="flex justify-center mb-6">
@@ -133,8 +121,7 @@ const TestimonialsSection = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
+            </div>
 
           {/* Navigation Arrows */}
           <button
@@ -170,11 +157,9 @@ const TestimonialsSection = () => {
         {/* Progress Bar */}
         <div className="mt-6 max-w-md mx-auto">
           <div className="w-full bg-white bg-opacity-20 rounded-full h-1">
-            <motion.div
-              className="bg-white h-1 rounded-full"
-              initial={{ width: 0 }}
-              animate={{ width: `${((currentIndex + 1) / testimonials.length) * 100}%` }}
-              transition={{ duration: 0.5 }}
+            <div
+              className="bg-white h-1 rounded-full transition-all duration-500"
+              style={{ width: `${((currentIndex + 1) / testimonials.length) * 100}%` }}
             />
           </div>
         </div>

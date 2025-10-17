@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
@@ -10,23 +9,13 @@ const ThankYouPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#3E1E76] via-[#4A2185] to-[#2A1450]">
       <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl w-full"
-        >
+        <div className="max-w-4xl w-full">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             {/* Success Icon */}
             <div className="bg-gradient-to-r from-[#3E1E76] to-[#9A070C] p-12 text-center">
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6"
-              >
+              <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                 <SafeIcon icon={FiCheck} className="w-12 h-12 text-green-500" />
-              </motion.div>
+              </div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 Thank You!
               </h1>
@@ -48,44 +37,29 @@ const ThankYouPage = () => {
 
               {/* Steps */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="text-center"
-                >
+                <div className="text-center">
                   <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <SafeIcon icon={FiMail} className="w-8 h-8 text-[#3E1E76]" />
                   </div>
                   <h3 className="font-bold text-[#3E1E76] mb-2">Email Confirmation</h3>
                   <p className="text-sm text-gray-600">Check your inbox for confirmation details</p>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  className="text-center"
-                >
+                <div className="text-center">
                   <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <SafeIcon icon={FiPhone} className="w-8 h-8 text-[#3E1E76]" />
                   </div>
                   <h3 className="font-bold text-[#3E1E76] mb-2">Expert Consultation</h3>
                   <p className="text-sm text-gray-600">We'll call to discuss your specific needs</p>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="text-center"
-                >
+                <div className="text-center">
                   <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <SafeIcon icon={FiHeart} className="w-8 h-8 text-[#3E1E76]" />
                   </div>
                   <h3 className="font-bold text-[#3E1E76] mb-2">Revenue Growth</h3>
                   <p className="text-sm text-gray-600">Start maximizing your practice's potential</p>
-                </motion.div>
+                </div>
               </div>
 
               {/* Contact Info */}
@@ -132,20 +106,15 @@ const ThankYouPage = () => {
           </div>
 
           {/* Footer Note */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-center mt-8"
-          >
+          <div className="text-center mt-8">
             <div className="flex items-center justify-center text-white/80">
               <SafeIcon icon={FiClock} className="w-5 h-5 mr-2" />
               <span className="text-sm">
                 We typically respond within 24 hours during business hours (Mon-Fri, 9am-5pm CST)
               </span>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );

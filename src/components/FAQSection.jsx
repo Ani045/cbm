@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
@@ -50,32 +49,22 @@ const FAQSection = () => {
   return (
     <section id="faq" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#3E1E76] mb-6">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Everything you need to know about working with CBM Medical Management
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div
+            <div
               key={index}
               className={`bg-white rounded-2xl shadow-lg transition-all duration-300 ${
                 openIndex === index ? 'shadow-xl' : 'hover:shadow-xl'
               }`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -91,15 +80,8 @@ const FAQSection = () => {
                 </div>
               </button>
 
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
+              {openIndex === index && (
+                <div className="overflow-hidden">
                     <div className="px-6 pb-6">
                       <div className="border-t border-gray-200 pt-4">
                         <p className="text-gray-700 leading-relaxed">
@@ -107,20 +89,13 @@ const FAQSection = () => {
                         </p>
                       </div>
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+                </div>
+              )}
+            </div>
           ))}
         </div>
 
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">
             Still have questions? We're here to help.
           </p>
@@ -134,7 +109,7 @@ const FAQSection = () => {
           <p className="text-gray-500 mt-3 text-sm">
             Get answers from our mental health billing experts
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

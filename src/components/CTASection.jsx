@@ -1,5 +1,4 @@
 import React from 'react';
-import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
@@ -16,12 +15,7 @@ const CTASection = () => {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{opacity: 0, y: 50}}
-          whileInView={{opacity: 1, y: 0}}
-          transition={{duration: 0.8}}
-          viewport={{once: true}}
-        >
+        <div>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Ready to Grow a Profitable{' '}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200">
@@ -33,15 +27,13 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <motion.button 
+            <button 
               className="bg-white text-[#3E1E76] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center group shadow-xl"
-              whileHover={{scale: 1.05}}
-              whileTap={{scale: 0.95}}
               onClick={() => document.getElementById('hero').scrollIntoView({behavior: 'smooth'})}
             >
               Schedule Free Discovery Call
               <SafeIcon icon={FiArrowRight} className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto text-center">
@@ -49,20 +41,16 @@ const CTASection = () => {
               {icon: FiClock, text: 'Free revenue assessment'},
               {icon: FiShield, text: '40+ years of experience'}
             ].map((item, index) => (
-              <motion.div 
+              <div 
                 key={index} 
                 className="flex items-center justify-center text-white space-x-3"
-                initial={{opacity: 0, y: 20}}
-                whileInView={{opacity: 1, y: 0}}
-                transition={{duration: 0.5, delay: index * 0.1}}
-                viewport={{once: true}}
               >
                 <SafeIcon icon={item.icon} className="w-5 h-5 text-green-400" />
                 <span className="font-medium">{item.text}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
