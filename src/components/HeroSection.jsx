@@ -85,7 +85,7 @@ const HeroSection = () => {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+             <form accept-charset='UTF-8' action='https://app.formester.com/forms/MEHdblgRf/submissions' method='POST' className="space-y-4">
                 <div>
                   <input
                     type="text"
