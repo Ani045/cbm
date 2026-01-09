@@ -99,6 +99,31 @@ const Footer = ({ onOpenPopup }) => {
                     info@cbmmedicalmanagement.com
                   </a>
                 </div>
+
+                {/* Social Media */}
+                <div className="mt-6">
+                  <h5 className="text-sm font-semibold mb-3 text-purple-100">Follow Us</h5>
+                  <div className="flex space-x-4">
+                    <a
+                      href="https://www.facebook.com/helpingthosewhohelpthehurting"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-purple-800 hover:bg-purple-700 rounded-full flex items-center justify-center transition-colors"
+                      aria-label="Follow us on Facebook"
+                    >
+                      <SafeIcon icon={FiFacebook} className="w-5 h-5 text-white" />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/rebecca-andrews-37572639/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-purple-800 hover:bg-purple-700 rounded-full flex items-center justify-center transition-colors"
+                      aria-label="Connect with us on LinkedIn"
+                    >
+                      <SafeIcon icon={FiLinkedin} className="w-5 h-5 text-white" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -11,7 +11,6 @@ import FAQSection from '../components/FAQSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 import PopupForm from '../components/PopupForm';
-import MobileCTAButton from '../components/MobileCTAButton';
 
 const LandingPage = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -40,9 +39,6 @@ const LandingPage = () => {
 
       {/* Popup Form - Auto appears after 6 seconds */}
       <PopupForm isOpen={isPopupOpen} onClose={handleClosePopup} />
-
-      {/* Mobile CTA Button */}
-      <MobileCTAButton onOpenPopup={handleOpenPopup} />
     </div>
   );
 };
