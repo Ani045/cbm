@@ -1,6 +1,10 @@
 import React from 'react';
+import * as FiIcons from 'react-icons/fi';
+import SafeIcon from '../common/SafeIcon';
 
-const AboutSection = () => {
+const { FiArrowRight } = FiIcons;
+
+const AboutSection = ({ onOpenPopup }) => {
   return (
     <section id="about" className="py-12 sm:py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,16 +18,28 @@ const AboutSection = () => {
           <div className="space-y-4 sm:space-y-6">
             <div className="border-l-4 border-[#3E1E76] pl-6">
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                For over 40 years, CBM Medical Management has been the trusted partner for mental health 
-                professionals across the nation. We're not just another billing company—we're practice owners ourselves.
+                For over 40 years, CBM Medical Management has provided the best mental health billing services
+                for psychiatry professionals across the nation. Our specialized psychiatry billing expertise
+                comes from owning and operating our own mental health clinics.
               </p>
             </div>
 
             <div className="border-l-4 border-[#9A070C] pl-6">
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                We understand the unique challenges of mental health billing because we live them daily in our own clinics. 
-                From TMS and Spravato to traditional psychiatry, we've mastered the art and science of revenue recovery.
+                We understand the unique challenges of billing for mental health services because we live them
+                daily. From TMS to traditional psychiatry, our mental health billing services
+                deliver faster claims turnaround, lower denial rates, and higher revenue recovery.
               </p>
+            </div>
+
+            <div className="mt-8">
+              <button
+                onClick={onOpenPopup}
+                className="bg-[#3E1E76] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#9A070C] transition-all duration-300 flex items-center group border-2 border-orange-500 shadow-lg"
+              >
+                Learn How We Can Help
+                <SafeIcon icon={FiArrowRight} className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
           </div>
 
@@ -37,12 +53,12 @@ const AboutSection = () => {
                   What makes us different?
                 </h3>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  We own and operate our own mental health clinics, giving us real-world insights 
+                  We own and operate our own mental health clinics, giving us real-world insights
                   no other billing company can match.
                 </p>
               </div>
             </div>
-            
+
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full opacity-20"></div>
             <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-full opacity-20"></div>
           </div>

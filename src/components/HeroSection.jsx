@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const {FiCheck, FiArrowRight} = FiIcons;
+const { FiCheck, FiArrowRight } = FiIcons;
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -38,37 +38,34 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-3">
             <div>
-              <div className="text-purple-200 text-lg font-medium mb-4">
-                40+ Years of Revenue Cycle Excellence
-              </div>
-              
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                <span className="block">Maximize Your</span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200">
-                  Mental Health Revenue.
-                </span>
-                <span className="block">Minimize Billing Headaches.</span>
+                Outsource Your Mental Health Billing — Grow Your Practice
               </h1>
 
               <p className="text-lg sm:text-xl text-purple-100 mb-6 sm:mb-8 max-w-2xl">
-                The only medical billing firm that owns and operates mental health clinics. 
-                We don't just process claims—we understand your practice from the inside out.
+                Get a Free Billing Evaluation & Personalized Plan for Psychiatry & Mental Health Practices.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
                 {[
-                  '40+ Years Experience',
-                  '98% Client Retention'
+                  { label: '98% Client Retention', icon: '⭐' },
+                  { label: 'Faster Claims Turnaround', icon: '⚡' },
+                  { label: 'Lower Denial Rates', icon: '✓' },
+                  { label: 'Higher Revenue Recovery', icon: '📈' }
                 ].map((badge, index) => (
                   <div
                     key={index}
-                    className="flex items-center text-white bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 sm:p-4"
+                    className="flex flex-col items-center justify-center text-white bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 sm:p-4 hover:bg-white/20 transition-all duration-300 hover:scale-105"
                   >
-                    <SafeIcon icon={FiCheck} className="w-5 h-5 text-green-400 mr-2 flex-shrink-0" />
-                    <span className="text-sm sm:text-base font-medium">{badge}</span>
+                    <span className="text-2xl mb-1">{badge.icon}</span>
+                    <span className="text-xs sm:text-sm font-medium text-center leading-tight">{badge.label}</span>
                   </div>
                 ))}
               </div>
+
+              <p className="text-base sm:text-lg text-purple-200 italic">
+                Specializing in best mental health billing services for psychiatry and TMS practices
+              </p>
             </div>
           </div>
 
@@ -85,7 +82,7 @@ const HeroSection = () => {
                 </p>
               </div>
 
-             <form accept-charset='UTF-8' action='https://app.formester.com/forms/MEHdblgRf/submissions' method='POST' className="space-y-4">
+              <form accept-charset='UTF-8' action='https://app.formester.com/forms/MEHdblgRf/submissions' method='POST' className="space-y-4">
                 <div>
                   <input
                     type="text"
@@ -132,8 +129,6 @@ const HeroSection = () => {
                     <option value="">Select Practice Type</option>
                     <option value="psychiatry">Psychiatry</option>
                     <option value="tms">TMS</option>
-                    <option value="spravato">Spravato</option>
-                    <option value="ketamine">Ketamine</option>
                     <option value="general">General Mental Health</option>
                   </select>
                 </div>

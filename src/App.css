@@ -4,13 +4,27 @@
 
 /* Custom animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes float-delay {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 .animate-float {
@@ -58,8 +72,8 @@ select:focus {
   position: relative;
 }
 
-.form-field input:focus + label,
-.form-field input:not(:placeholder-shown) + label {
+.form-field input:focus+label,
+.form-field input:not(:placeholder-shown)+label {
   transform: translateY(-24px) scale(0.8);
   color: #3E1E76;
 }
@@ -109,7 +123,7 @@ select:focus {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   .mobile-text-center {
     text-align: center;
   }
@@ -127,7 +141,7 @@ select:focus {
   .text-gray-600 {
     color: #000 !important;
   }
-  
+
   .text-gray-700 {
     color: #000 !important;
   }
@@ -140,4 +154,95 @@ select:focus {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Fade in animation for popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mobile safe area padding */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* CTA Button Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(62, 30, 118, 0.4), 0 0 40px rgba(154, 7, 12, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(62, 30, 118, 0.6), 0 0 60px rgba(154, 7, 12, 0.4);
+  }
+}
+
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  animation: shimmer 3s infinite;
+}
+
+.cta-button:hover {
+  transform: scale(1.05) translateY(-2px);
+  animation: glow-pulse 1s ease-in-out infinite;
+}
+
+.cta-button:active {
+  transform: scale(0.98);
 }

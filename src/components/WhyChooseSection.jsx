@@ -5,7 +5,7 @@ import SafeIcon from '../common/SafeIcon';
 
 const { FiCheck, FiUsers, FiBrain, FiBarChart3, FiAward, FiTrendingUp, FiArrowRight } = FiIcons;
 
-const WhyChooseSection = () => {
+const WhyChooseSection = ({ onOpenPopup }) => {
   const differentiators = [
     {
       icon: FiUsers,
@@ -15,7 +15,7 @@ const WhyChooseSection = () => {
     {
       icon: FiBrain,
       title: 'Mental Health Specialists',
-      description: 'Exclusively focused on psychiatry, TMS, Spravato, and ketamine therapy. We speak your language.'
+      description: 'Exclusively focused on psychiatry and TMS therapy. We speak your language.'
     },
     {
       icon: FiBarChart3,
@@ -34,9 +34,7 @@ const WhyChooseSection = () => {
     }
   ];
 
-  const scrollToForm = () => {
-    document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
-  };
+
 
   return (
     <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 to-purple-50">
@@ -56,7 +54,7 @@ const WhyChooseSection = () => {
               <div
                 key={index}
                 className="flex items-start space-x-3 sm:space-x-4 group cursor-pointer"
-                onClick={scrollToForm}
+                onClick={onOpenPopup}
               >
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#3E1E76] to-[#9A070C] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
@@ -75,8 +73,8 @@ const WhyChooseSection = () => {
             ))}
 
             <div className="mt-6 sm:mt-8">
-              <button 
-                onClick={scrollToForm}
+              <button
+                onClick={onOpenPopup}
                 className="w-full sm:w-auto bg-[#3E1E76] text-white px-8 py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#9A070C] transition-colors duration-300 flex items-center justify-center sm:justify-start group shadow-lg"
               >
                 Start Maximizing Your Revenue
@@ -112,14 +110,14 @@ const WhyChooseSection = () => {
 
               <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-gradient-to-r from-purple-50 to-red-50 rounded-xl">
                 <p className="text-center text-sm sm:text-base text-gray-700 italic">
-                  "The only billing company owned by mental health professionals, 
+                  "The only billing company owned by mental health professionals,
                   for mental health professionals."
                 </p>
               </div>
             </div>
 
             {/* Background Decorations */}
-           
+
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-red-200 to-red-300 rounded-full opacity-20"></div>
           </div>
         </div>

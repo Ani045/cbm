@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -10,21 +10,39 @@ import TestimonialsSection from '../components/TestimonialsSection';
 import FAQSection from '../components/FAQSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
+import PopupForm from '../components/PopupForm';
+import MobileCTAButton from '../components/MobileCTAButton';
 
 const LandingPage = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleOpenPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Header onOpenPopup={handleOpenPopup} />
       <HeroSection />
-      <AboutSection />
-      <StatsSection />
-      <ServicesSection />
-      <ProcessSection />
-      <WhyChooseSection />
+      <AboutSection onOpenPopup={handleOpenPopup} />
+      <StatsSection onOpenPopup={handleOpenPopup} />
+      <ServicesSection onOpenPopup={handleOpenPopup} />
+      <ProcessSection onOpenPopup={handleOpenPopup} />
+      <WhyChooseSection onOpenPopup={handleOpenPopup} />
       <TestimonialsSection />
       <FAQSection />
-      <CTASection />
-      <Footer />
+      <CTASection onOpenPopup={handleOpenPopup} />
+      <Footer onOpenPopup={handleOpenPopup} />
+
+      {/* Popup Form - Auto appears after 6 seconds */}
+      <PopupForm isOpen={isPopupOpen} onClose={handleClosePopup} />
+
+      {/* Mobile CTA Button */}
+      <MobileCTAButton onOpenPopup={handleOpenPopup} />
     </div>
   );
 };

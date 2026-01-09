@@ -18,7 +18,7 @@ const FAQSection = () => {
     },
     {
       question: "What types of practices do you work with?",
-      answer: "We specialize exclusively in mental health practices including psychiatry, TMS therapy, Spravato treatments, ketamine therapy, and general mental health services. Our deep expertise in these areas allows us to maximize reimbursements that generalist billing companies often miss."
+      answer: "We specialize exclusively in mental health practices including psychiatry, TMS therapy, and general mental health services. Our deep expertise in these areas allows us to maximize reimbursements that generalist billing companies often miss."
     },
     {
       question: "How does your pricing work?",
@@ -62,9 +62,8 @@ const FAQSection = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`bg-white rounded-2xl shadow-lg transition-all duration-300 ${
-                openIndex === index ? 'shadow-xl' : 'hover:shadow-xl'
-              }`}
+              className={`bg-white rounded-2xl shadow-lg transition-all duration-300 ${openIndex === index ? 'shadow-xl' : 'hover:shadow-xl'
+                }`}
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -73,22 +72,21 @@ const FAQSection = () => {
                 <h3 className="text-lg font-semibold text-[#3E1E76] pr-4">
                   {faq.question}
                 </h3>
-                <div className={`flex-shrink-0 w-8 h-8 bg-gradient-to-r from-[#3E1E76] to-[#9A070C] rounded-full flex items-center justify-center transition-transform duration-300 ${
-                  openIndex === index ? 'rotate-45' : ''
-                }`}>
+                <div className={`flex-shrink-0 w-8 h-8 bg-gradient-to-r from-[#3E1E76] to-[#9A070C] rounded-full flex items-center justify-center transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''
+                  }`}>
                   <SafeIcon icon={openIndex === index ? FiMinus : FiPlus} className="w-4 h-4 text-white" />
                 </div>
               </button>
 
               {openIndex === index && (
                 <div className="overflow-hidden">
-                    <div className="px-6 pb-6">
-                      <div className="border-t border-gray-200 pt-4">
-                        <p className="text-gray-700 leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
+                  <div className="px-6 pb-6">
+                    <div className="border-t border-gray-200 pt-4">
+                      <p className="text-gray-700 leading-relaxed">
+                        {faq.answer}
+                      </p>
                     </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -99,7 +97,7 @@ const FAQSection = () => {
           <p className="text-gray-600 mb-6">
             Still have questions? We're here to help.
           </p>
-          <button 
+          <button
             onClick={scrollToForm}
             className="bg-[#3E1E76] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#9A070C] transition-colors duration-300 flex items-center mx-auto group shadow-lg"
           >
